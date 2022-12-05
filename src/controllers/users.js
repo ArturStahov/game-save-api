@@ -45,6 +45,7 @@ const login = async (req, res, next) => {
     try {
         const { email, password } = req.body
         const { user, token } = await serviceAuth.login({ email, password })
+        console.log(user, token,'UUUU')
         if (user) {
             return res.status(HttpCode.OK).json({
                 status: 'success',
